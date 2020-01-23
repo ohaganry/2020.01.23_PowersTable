@@ -1,0 +1,11 @@
+/home/master/Documents/bootcamp/powerstable/powerstable/bin/Debug/netcoreapp2.1/powerstable.deps.json
+/home/master/Documents/bootcamp/powerstable/powerstable/bin/Debug/netcoreapp2.1/powerstable.runtimeconfig.json
+/home/master/Documents/bootcamp/powerstable/powerstable/bin/Debug/netcoreapp2.1/powerstable.runtimeconfig.dev.json
+/home/master/Documents/bootcamp/powerstable/powerstable/bin/Debug/netcoreapp2.1/powerstable.dll
+/home/master/Documents/bootcamp/powerstable/powerstable/bin/Debug/netcoreapp2.1/powerstable.pdb
+/home/master/Documents/bootcamp/powerstable/powerstable/obj/Debug/netcoreapp2.1/powerstable.csprojAssemblyReference.cache
+/home/master/Documents/bootcamp/powerstable/powerstable/obj/Debug/netcoreapp2.1/powerstable.csproj.CoreCompileInputs.cache
+/home/master/Documents/bootcamp/powerstable/powerstable/obj/Debug/netcoreapp2.1/powerstable.AssemblyInfoInputs.cache
+/home/master/Documents/bootcamp/powerstable/powerstable/obj/Debug/netcoreapp2.1/powerstable.AssemblyInfo.cs
+/home/master/Documents/bootcamp/powerstable/powerstable/obj/Debug/netcoreapp2.1/powerstable.dll
+/home/master/Documents/bootcamp/powerstable/powerstable/obj/Debug/netcoreapp2.1/powerstable.pdb
