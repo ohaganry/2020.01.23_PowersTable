@@ -7,33 +7,69 @@ namespace powerstable
         static void Main(string[] args)
         {
             //declare variables
-            int squared;
-            int cubed;
             int userInput;
-            string temp;
+            string repeat = "";
             bool proceed = false;
             //begin validation do-while loop
             do
-            {
-                do
+            {   
+                //asks for number, checks for valid input & outputs to int
+                userInput = ParseInput("Give me a number: ");
+                //set up for table
+                Console.WriteLine("====================");
+                Console.WriteLine("Number  Square  Cube");
+                Console.WriteLine("====================");
+                //for loop runs for numbers 1 through input number
+                for(int i = 1; i <= userInput; i++)
                 {
-                    Console.WriteLine("Give me a whole number up to 20");
-                    temp = Console.ReadLine();
-                    bool num = int.TryParse(temp, out userInput);
-
-                } while (temp == false);
-               
+                    //outputs a line with input, squared, & cubed numbers
+                    Console.WriteLine($"{i}\t{Squared(i)}\t{Cubed(i)}");
+                }
+                Console.WriteLine("====================");
+                //confirm program continuation or end
+                repeat = GetUserInput("Would you like to go again? ");
+                
+                if(repeat == "y")
+                {
+                    proceed = true;
+                }
+                else
+                {
+                    proceed = false;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Goodbye");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                
             } while (proceed == true);
         }
         public static int Cubed(int num1)
         {
-            int cubed = Squared(num1) * num1;
-            return cubed;
+            //cube output
+            return num1 * num1 * num1;
         }
         public static int Squared(int num1)
         {
-            int squared = num1 * num1;
-            return squared;
+            //square output
+            return num1 * num1;
+        }
+        public static string GetUserInput(string message)
+        {
+            Console.Write(message);
+            return Console.ReadLine();
+        }
+        public static int ParseInput(string message)
+        {
+            //parsed value
+            int value;
+            //checks for valid input and parse input if valid
+                while(!int.TryParse(GetUserInput(message),out value))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Entry is not a valid number, please try agian");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                return value;
         }
     }
 }
