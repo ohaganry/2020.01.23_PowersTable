@@ -8,8 +8,6 @@ namespace powerstable
         {
             //declare variables
             int userInput;
-            string repeat = "";
-            bool proceed = false;
             //begin validation do-while loop
             do
             {   
@@ -26,22 +24,13 @@ namespace powerstable
                     Console.WriteLine($"{i}\t{Squared(i)}\t{Cubed(i)}");
                 }
                 Console.WriteLine("====================");
-                //confirm program continuation or end
-                repeat = GetUserInput("Would you like to go again? ");
                 
-                if(repeat == "y")
-                {
-                    proceed = true;
-                }
-                else
-                {
-                    proceed = false;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Goodbye");
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
                 
-            } while (proceed == true);
+              //confirm program continuation or end  
+            } while (ValidateInput());
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Goodbye");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static int Cubed(int num1)
         {
@@ -67,9 +56,25 @@ namespace powerstable
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Entry is not a valid number, please try agian");
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ResetColor();
                 }
                 return value;
+        }
+        public static bool ValidateInput()
+        {
+            string usertInput = GetUserInput("Would you like to proceed? ").ToLower();
+            if(usertInput == "y")
+            {
+                return true;
+            }
+            else if(usertInput == "n")
+            {
+                return false;
+            }
+            else
+            {
+                return ValidateInput();
+            }
         }
     }
 }
